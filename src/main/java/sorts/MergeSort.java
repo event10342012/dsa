@@ -1,3 +1,5 @@
+package sorts;
+
 public class MergeSort {
     private static void mergeSort(int[] arr, int p, int r) {
         if (p >= r) {
@@ -12,10 +14,13 @@ public class MergeSort {
     }
 
     private static void merge(int[] arr, int p, int q, int r) {
-        int i = p, j = q + 1, k = 0;
+        int i = p;
+        int j = q + 1;
+        int k = 0;
 
         int[] tmp = new int[r - p + 1];
 
+        // merge two sequences
         while (i <= q && j <= r) {
             if (arr[i] < arr[j]) {
                 tmp[k++] = arr[i++];
@@ -24,17 +29,19 @@ public class MergeSort {
             }
         }
 
-        int start = i, end = q;
+        // add rest of sequence to tmp array
+        int start = i;
+        int end = q;
         if (j <= r) {
             start = j;
             end = r;
         }
-
         while (start <= end) {
             tmp[k++] = arr[start++];
         }
 
-        for (i = 0; i <= r - p; i++) {
+        // copy to arr
+        for (i = 0; i < tmp.length; i++) {
             arr[p + i] = tmp[i];
         }
     }
@@ -44,7 +51,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = utils.generateRandomArray(10);
+        int[] arr = utils.generateRandomArray(5);
         utils.printList(arr);
         sort(arr);
         utils.printList(arr);

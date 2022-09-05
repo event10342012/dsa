@@ -1,3 +1,5 @@
+package sorts;
+
 public class Sorts {
     public static void insertionSort1(int[] arr) {
         if (arr.length <= 1) {
