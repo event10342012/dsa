@@ -4,4 +4,5 @@ project(dsa)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(dsa
-        c++/sort/basic_sort.cpp)
+        sort/basic_sort.cpp
+        queue_and_stack/queue.cpp)
