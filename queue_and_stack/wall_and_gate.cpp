@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class Solution {
+class WallAndGate {
 private:
     const static int empty = INT_MAX;
     const static int gate = 0;
