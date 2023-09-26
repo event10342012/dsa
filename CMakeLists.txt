@@ -7,4 +7,5 @@ add_executable(dsa
         sort/basic_sort.cpp
         queue_and_stack/queue.cpp
         queue_and_stack/moving_average.cpp
-        queue_and_stack/wall_and_gate.cpp)
+        queue_and_stack/wall_and_gate.cpp
+        queue_and_stack/open_the_lock.cpp)
