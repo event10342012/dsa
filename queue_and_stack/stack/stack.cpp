@@ -1,0 +1,54 @@
+//
+// Created by Leo Chen on 2023/10/4.
+//
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Stack {
+private:
+    vector<int> data;               // store elements
+    int min;
+public:
+    Stack(){
+        min = INT32_MIN;
+    }
+    /** Insert an element into the stack. */
+    void push(int x) {
+        data.push_back(x);
+    }
+
+    /** Checks whether the queue is empty or not. */
+    bool isEmpty() {
+        return data.empty();
+    }
+
+    /** Get the top item from the queue. */
+    int top() {
+        return data.back();
+    }
+
+    /** Delete an element from the queue. Return true if the operation is successful. */
+    bool pop() {
+        if (isEmpty()) {
+            return false;
+        }
+        data.pop_back();
+        return true;
+    }
+};
+
+int main() {
+    Stack s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    for (int i = 0; i < 4; ++i) {
+        if (!s.isEmpty()) {
+            cout << s.top() << endl;
+        }
+        cout << (s.pop() ? "true" : "false") << endl;
+    }
+}
