@@ -9,4 +9,5 @@ add_executable(dsa
         queue_and_stack/queue/moving_average.cpp
         queue_and_stack/queue/wall_and_gate.cpp
         queue_and_stack/queue/open_the_lock.cpp
+        queue_and_stack/conclusion/decoding_string.cpp
 )
