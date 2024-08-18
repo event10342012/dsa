@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(dsa
         queue_and_stack/conclusion/decoding_string.cpp
         queue_and_stack/conclusion/matrix.cpp
+        heap/heap.cpp
 )
