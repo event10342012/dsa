@@ -30,7 +30,7 @@ public:
         int index = real_size;
 
         while (index > 1 && min_heap[parent] > min_heap[index]) {
-            int tmp = min_heap[parent];
+            int tmp = min_heap[index];
             min_heap[index] = min_heap[parent];
             min_heap[parent] = tmp;
             index = parent;
@@ -54,8 +54,8 @@ public:
         int index = 1;
 
         while (index <= real_size / 2) {
-            int left = index * 2 + 1;
-            int right = index * 2 + 2;
+            int left = index * 2 ;
+            int right = index * 2 + 1;
             if (min_heap[index] > min_heap[left] || min_heap[index] > min_heap[right]) {
                 if (min_heap[left] > min_heap[right]) {
                     int tmp = min_heap[index];

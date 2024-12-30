@@ -1,0 +1,46 @@
+//
+// Created by Leo Chen on 2024/12/28.
+//
+
+#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+class MedianFinder {
+private:
+    priority_queue<int> max_heap;
+    priority_queue<int, vector<int>, greater<int>> min_heap;
+    int count;
+public:
+    MedianFinder() {
+        count = 0;
+    }
+
+    void addNum(int num) {
+        count++;
+        max_heap.push(num);
+        min_heap.push(max_heap.top());
+        max_heap.pop();
+        if (count % 2 == 1) {
+            max_heap.push(min_heap.top());
+            min_heap.pop();
+        }
+    }
+
+    double findMedian() {
+        if (count % 2 == 1) {
+            return max_heap.top();
+        } else {
+            return (max_heap.top() + min_heap.top()) / 2.0;
+        }
+    }
+};
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder* obj = new MedianFinder();
+ * obj->addNum(num);
+ * double param_2 = obj->findMedian();
+ */
